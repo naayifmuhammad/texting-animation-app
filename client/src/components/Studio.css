@@ -1,0 +1,108 @@
+.studio-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hamburger-menu {
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  position: fixed;
+  z-index: 1100;
+}
+
+.sidebar {
+  width: 0;
+  background-color: #333;
+  transition: width 0.3s ease-in-out;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  width: 100%;
+}
+
+.sidebar-item {
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid #555;
+}
+
+.sidebar-section {
+  padding: 20px;
+}
+
+.input-label {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.person-count{
+  text-align: center;
+}
+.num-people-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.people-input {
+  width: 40px;
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+.people-count-container{
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.content {
+  flex: 1;
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  transition: margin-left 0.1s ease-in-out;
+}
+
+/* Chat input styling */
+.chat-input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #555;
+}
+
+/* .chat-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background-color: #2c2c2c;
+  color: #222;
+  font-size: 16px;
+  outline: none;
+  width: 100%; 
+} */

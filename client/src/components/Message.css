@@ -1,0 +1,35 @@
+/* Message.css */
+
+.message-container {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .message-bubble {
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 70%;
+  }
+  
+  /* Styles for sender (person 1) */
+  .message-container.sender {
+    justify-content: flex-end;
+  }
+  
+  .message-bubble.sender {
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+  }
+  
+  /* Styles for other persons */
+  .message-container.other {
+    justify-content: flex-start;
+  }
+  
+  .message-bubble.other {
+    background-color: #f0f0f0;
+    color: #222;
+    border-radius: 0 20px 20px 20px;
+  }
+  

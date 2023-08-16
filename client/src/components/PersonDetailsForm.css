@@ -1,0 +1,42 @@
+.person-details {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #b0b0b0;
+  }
+  
+  .name-input,
+  .file-input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-label {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .file-label:hover {
+    background-color: #0056b3;
+  }
+  
