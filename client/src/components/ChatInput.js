@@ -26,9 +26,6 @@ const ChatInput = ({ messages, setMessages }) => {
     if (e.key === "Enter") {
       handleSendClick();
     }
-    if (e.key === "c") {
-      console.log(PersonDetails);
-    }
   };
 
   return (

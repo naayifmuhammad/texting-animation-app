@@ -1,18 +1,14 @@
 import React from "react";
 import "./UserSelectionPopup.css"; // Create this CSS file for styling
 
-const UserSelectionPopup = ({ users, onSelectUser, onClose }) => {
+const UserSelectionPopup = ({ users, onSelect, onClose }) => {
   return (
     <div className="user-selection-popup">
       <div className="popup-header">Select User</div>
       <div className="user-list">
-        {users.map((user) => (
-          <div
-            key={user.id}
-            className="user-item"
-            onClick={() => onSelectUser(user.id)}
-          >
-            {user.name}
+        {Object.keys(users).map((id) => (
+          <div key={id} className="user-item" onClick={() => onSelect(id)}>
+            {users[id].name}
           </div>
         ))}
       </div>

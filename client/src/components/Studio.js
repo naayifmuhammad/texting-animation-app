@@ -14,7 +14,7 @@ const Studio = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [numPeople, setNumPeople] = useState(1);
-  const [personDetails, setPersonDetails] = useState([]); // Array to store person details
+  const [personDetails, setPersonDetails] = useState({}); // Array to store person details
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const maxCount = 10;
@@ -22,7 +22,7 @@ const Studio = () => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.altKey && event.key === "u") {
-        console.log(personDetails);
+        console.log(messages);
       }
     };
 
@@ -47,7 +47,7 @@ const Studio = () => {
 
   // Function to update person details
   const updatePersonDetails = (id, updatedDetails) => {
-    console.log(`Updated details for id ${id}:`, updatedDetails);
+    //console.log(`Updated details for id ${id}:`, updatedDetails);
     setPersonDetails((prevDetails) => {
       prevDetails[id] = updatedDetails;
       return prevDetails;
@@ -58,13 +58,17 @@ const Studio = () => {
     // Logic to assign the selected user to the message
     const updatedMessages = messages.map((message, index) => {
       if (index === selectedMessage) {
-        return { ...message, senderNo: selectedUserId };
+        return { ...message, senderNo: parseInt(selectedUserId) };
       }
       return message;
     });
 
     setMessages(updatedMessages);
     setIsPopupOpen(false);
+  };
+
+  const handlePopupClose = (isPopupOpen) => {
+    setIsPopupOpen(!isPopupOpen);
   };
 
   return (
@@ -137,8 +141,9 @@ const Studio = () => {
       {isPopupOpen && (
         <div className="user-selection-popup-container">
           <UserSelectionPopup
-            personDetails={personDetails}
+            users={personDetails}
             onSelect={handleUserSelect}
+            onClose={handlePopupClose}
           />
         </div>
       )}

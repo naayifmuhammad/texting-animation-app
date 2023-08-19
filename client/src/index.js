@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom"; // Correct import statement
+import ReactDOM from "react-dom/client"; // Correct import statement
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
