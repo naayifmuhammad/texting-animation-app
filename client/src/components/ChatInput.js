@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FaRegPaperPlane } from "react-icons/fa"; // Import the send icon
 import "./ChatInput.css";
-import PersonDetails from "./PersonDetailsForm";
+//import PersonDetails from "./PersonDetailsForm";
 
 const ChatInput = ({ messages, setMessages }) => {
   const [message, setMessage] = useState("");

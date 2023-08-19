@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "./Studio.css"; // Create this CSS file for styling
 import PersonDetailsForm from "./PersonDetailsForm";
@@ -19,21 +19,21 @@ const Studio = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const maxCount = 10;
 
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.altKey && event.key === "u") {
-        console.log(messages);
-      }
-    };
+  // useEffect(() => {
+  //   const handleKeyDown = (event) => {
+  //     if (event.altKey && event.key === "u") {
+  //       console.log();
+  //     }
+  //   };
 
-    // Add the event listener when the component mounts
-    window.addEventListener("keydown", handleKeyDown);
+  //   // Add the event listener when the component mounts
+  //   window.addEventListener("keydown", handleKeyDown);
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
