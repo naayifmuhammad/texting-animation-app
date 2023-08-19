@@ -40,7 +40,9 @@ const PersonDetails = ({ index, updatePersonDetails }) => {
           onChange={handleFileInputChange}
         />
       </label>
-      <button onClick={handleSave}>Save</button>
+      <button className="save-button" onClick={handleSave}>
+        Save
+      </button>
     </div>
   );
 };
