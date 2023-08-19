@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FaRegPaperPlane } from "react-icons/fa"; // Import the send icon
 import "./ChatInput.css";
+import PersonDetails from "./PersonDetailsForm";
 
 const ChatInput = ({ messages, setMessages }) => {
   const [message, setMessage] = useState("");
@@ -24,6 +25,9 @@ const ChatInput = ({ messages, setMessages }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSendClick();
+    }
+    if (e.key === "c") {
+      console.log(PersonDetails);
     }
   };
 

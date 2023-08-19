@@ -23,7 +23,7 @@ const PersonDetails = ({ index, updatePersonDetails }) => {
 
   return (
     <div className="person-details">
-      <div className="input-label">{index + 1}</div>
+      <div className="input-label">{index}</div>
       <input
         type="text"
         placeholder="Name"

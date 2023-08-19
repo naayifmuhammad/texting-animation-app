@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import AuthForm from "./components/AuthForm";
+//import AuthForm from "./components/AuthForm";
 import Dashboard from "./components/Dashboard"; // Import the Dashboard component
 import Studio from "./components/Studio";
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<AuthForm />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="studio" element={<Studio />} />
         </Routes>
