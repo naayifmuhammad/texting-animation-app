@@ -13,15 +13,26 @@ const Studio = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [numPeople, setNumPeople] = useState(1);
+  const maxCount = 10;
+  const [personDetails, setPersonDetails] = useState([]); // Array to store person details
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleNumPeopleChange = (newNumPeople) => {
-    if (newNumPeople >= 1 && newNumPeople <= 10) {
+    if (newNumPeople >= 1 && newNumPeople <= maxCount) {
       setNumPeople(newNumPeople);
     }
+  };
+
+  // Function to update person details
+  const updatePersonDetails = (index, updatedDetails) => {
+    setPersonDetails((prevDetails) =>
+      prevDetails.map((person, i) =>
+        i === index ? { ...person, ...updatedDetails } : person
+      )
+    );
   };
 
   return (
@@ -42,7 +53,7 @@ const Studio = () => {
                   handleNumPeopleChange(parseInt(e.target.value))
                 }
                 min="1"
-                max="5"
+                max={`"${maxCount}"`}
                 className="people-input"
               />
               <button onClick={() => handleNumPeopleChange(numPeople + 1)}>
@@ -53,7 +64,12 @@ const Studio = () => {
         </div>
         {/* Add a section for each person */}
         {[...Array(numPeople)].map((_, index) => (
-          <PersonDetailsForm key={index} index={index} />
+          <PersonDetailsForm
+            key={index}
+            index={index}
+            updatePersonDetails={updatePersonDetails} // Pass the updatePersonDetails function
+            personDetails={personDetails} // Pass the personDetails array
+          />
         ))}
       </div>
       <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
@@ -73,7 +89,11 @@ const Studio = () => {
       </div>
       {!isSidebarOpen && (
         <div className="chat-input-container studio">
-          <ChatInput messages={messages} setMessages={setMessages} />
+          <ChatInput
+            messages={messages}
+            setMessages={setMessages}
+            personDetails={personDetails} // Pass the personDetails array
+          />
         </div>
       )}
     </div>
